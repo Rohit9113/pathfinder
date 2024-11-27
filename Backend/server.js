@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-bhusg;
-=======
 const express = require("express");
 const connectDB = require("./config/db");
 const dotenv = require("dotenv");
@@ -17,11 +14,11 @@ app.use(express.json());
 
 app.use("/api/contacts", require("./routes/contactRoutes"));
 app.use("/api/academics", require("./routes/academicsRoutes"));
+app.use("/api/signup", require("./routes/signupRoutes"));
+
 
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-  console.log("Testing");
 });
->>>>>>> Stashed changes

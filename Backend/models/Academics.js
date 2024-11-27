@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const academicSchema = new Schema({
     academicname: {
         type: String,
-        required: true
+        required: true,
     },
     description: {
         type: String,
@@ -21,6 +21,15 @@ const academicSchema = new Schema({
     country: {
         type: String,
         required: true,
+    },
+    website: {
+        type: String,
+    },
+    founder: { 
+        type: String,
+    },
+    foundedYear: { 
+        type: Number,
     }
 });
 
