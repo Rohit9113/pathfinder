@@ -1,3 +1,6 @@
+<<<<<<< Updated upstream
+bhusg;
+=======
 const express = require("express");
 const connectDB = require("./config/db");
 const dotenv = require("dotenv");
@@ -21,3 +24,4 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   console.log("Testing");
 });
+>>>>>>> Stashed changes
