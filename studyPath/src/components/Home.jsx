@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Nav from './Nav';
+import Footer from './Footer';
 // import geek from './Academics/img/GeeksforGeeks.webp';
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
@@ -22,6 +24,7 @@ function Home() {
 
     return (
         <>
+        <Nav />
             <img src="https://img.freepik.com/premium-photo/back-school-school-supplies-apple-yellow-background-layout-school-accessories-distance-learning_215990-1234.jpg?w=826" alt="Background"
                 className=" w-full h-[450px] object-cover mb-10 md:mb-10"
             />
@@ -49,6 +52,8 @@ function Home() {
                     Click For More
                 </Link>
             </div>
+
+        <Footer />
         </>
     );
 }
