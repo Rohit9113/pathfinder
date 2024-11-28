@@ -11,7 +11,7 @@ function Home() {
     const [academics, setAcademics] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:5000/api/academics")
+        axios.get("http://localhost:4000/api/academics")
             .then((response) => {
                 setAcademics(response.data);
             })

@@ -18,7 +18,7 @@ const Login = () => {
         e.preventDefault();
         setResponse('');
         try {
-            const res = await axios.post('http://localhost:5000/api/login/login', formData);
+            const res = await axios.post('http://localhost:4000/api/login/login', formData);
 
             if (res.status === 200) {
                 localStorage.setItem('authToken', res.data.token);

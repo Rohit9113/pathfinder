@@ -12,7 +12,7 @@ function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/contacts", formData);
+      const res = await axios.post("http://localhost:4000/api/contacts", formData);
       setResponse(res.data.message);
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {

@@ -22,7 +22,7 @@ const Signin = () => {
         setError("");
         setResponse("");
         try {
-            const res = await axios.post('http://localhost:5000/api/signup/signup', formData);
+            const res = await axios.post('http://localhost:4000/api/signup/signup', formData);
             if (res.status === 201) {
                 setResponse(res.data.message);
                 setFormData({ name: "", email: "", password: "", confirmPassword: "" });
