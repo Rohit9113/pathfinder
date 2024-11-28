@@ -5,6 +5,8 @@ import Home from './components/Home';
 import Academics from './components/Academics/Academics';
 import Signin from './components/Users/Register';
 import Login from './components/Users/Login';
+import About from "./pages/About";
+import FAQ from "./pages/FAQ";
 
 import './App.css';
 
@@ -17,6 +19,8 @@ function App() {
         <Route path="/Academics" element={<Academics />} />
         <Route path="/signup" element={<Signin />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/faq" element={<FAQ />} />
       </Routes>
     </Router>
   );
