@@ -69,10 +69,10 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
         id="infoPanel"
         className={`w-[50%] h-[50%] justify-around items-center rounded-full hidden md:flex border-2 
           ${isScrolled ? 'text-white border-white' : 'text-black border-black'}`}>
-          <a href="/" className='hover:underline'>Home</a>
-          <a href="" className='hover:underline'>About Us</a>
-          <a href="" className='hover:underline'>Our Services</a>
-          <a href="" className='hover:underline'>Contact Us</a>
+          <Link to="/" className='hover:underline'>Home</Link>
+          <Link to="/about" className='hover:underline'>About Us</Link>
+          <Link to="" className='hover:underline'>Our Services</Link>
+          <Link to="contact" className='hover:underline'>Contact Us</Link>
         </div>
 
         <div 
@@ -80,7 +80,7 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
         className={`w-[20%] h-[50%] border-2 justify-around items-center rounded-full hidden md:flex 
         ${isScrolled ? 'text-white border-white' : 'text-black border-black'}`}>
           <Link to="/login" className='hover:underline'>Log-in</Link>
-          <Link to="/signin" className='hover:underline'>Sign-up</Link>
+          <Link to="/signup" className='hover:underline'>Sign-up</Link>
         </div>
 
         <button

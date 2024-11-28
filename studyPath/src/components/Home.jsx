@@ -53,7 +53,7 @@ function Home() {
                 </Link>
             </div>
 
-        <Footer />
+        
         </>
     );
 }

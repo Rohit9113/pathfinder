@@ -64,7 +64,7 @@ const Login = () => {
                 </motion.div>
             </div>
 
-            <Footer />
+           
         </>
     );
 };
