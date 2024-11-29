@@ -87,7 +87,7 @@ function Home() {
             <div id="faq">
                 <FAQ />
             </div>
-        <Footer />
+       
         </>
     );
 }
