@@ -20,11 +20,13 @@ const Login = () => {
 
             if (res.status === 200) {
                 localStorage.setItem('authToken', res.data.token);
+                localStorage.setItem('user', JSON.stringify(res.data.user));
                 navigate('/');
+                window.location.reload();
             }
         } catch (error) {
-            const errorMessage = error.response && error.response.data.message 
-                ? error.response.data.message 
+            const errorMessage = error.response && error.response.data.message
+                ? error.response.data.message
                 : 'An error occurred';
             toast.error(errorMessage, {
                 position: "top-center",
@@ -36,6 +38,8 @@ const Login = () => {
             });
         }
     };
+
+
 
     return (
         <>

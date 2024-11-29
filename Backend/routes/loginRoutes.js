@@ -22,9 +22,11 @@ router.post('/login', async (req, res) => {
       expiresIn: '1h',
     });
 
+    // Send both token and user data (name, email, etc.)
     res.status(200).json({
       message: 'Login successful',
       token,
+      user: { name: user.name, email: user.email }, // Include user data
     });
   } catch (error) {
     console.error(error);

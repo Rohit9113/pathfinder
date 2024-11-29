@@ -8,14 +8,41 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Signin = () => {
     const [formData, setFormData] = useState({ name: "", email: "", password: "", confirmPassword: "" });
+    const [errors, setErrors] = useState({});
     const navigate = useNavigate();
+
+    const validate = () => {
+        const newErrors = {};
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,16}$/;
+
+        if (!formData.name.trim()) {
+            newErrors.name = "Name is required.";
+        }
+        if (!emailRegex.test(formData.email)) {
+            newErrors.email = "Invalid email format.";
+        }
+        if (!passwordRegex.test(formData.password)) {
+            newErrors.password =
+                "Password must be 6-16 characters, and at least one letter, one number, and one special character.";
+        }
+        if (formData.password !== formData.confirmPassword) {
+            newErrors.confirmPassword = "Password not matched";
+        }
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
+        setErrors({ ...errors, [e.target.name]: "" });
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (!validate()) return;
+
         try {
             const res = await axios.post('http://localhost:4000/api/signup/signup', formData);
             if (res.status === 201) {
@@ -46,18 +73,23 @@ const Signin = () => {
                     <form onSubmit={handleSubmit} className='w-full sm:w-full md:mt-10 flex flex-col justify-center items-center'>
                         <div className='mb-1'>
                             <input type='text' name='name' value={formData.name} onChange={handleChange} autoComplete='off' placeholder='Enter Your Full Name' required className='mt-9 sm:mt-0 w-[300px] sm:p-3 px-2 py-2 text-sm md:w-[400px] rounded-full outline-indigo-500'/>
+                            <input type='text' name='name' value={formData.name} onChange={handleChange} autoComplete='off' placeholder='Enter Your Full Name' required className='mt-2 p-3 w-[500px] border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500'  />
+                            {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
                         </div>
 
                         <div className='mb-1'>
-                            <input type='email' name='email' value={formData.email} onChange={handleChange} autoComplete='off' required placeholder='Enter Your Email' className='mt-3 w-[300px] sm:p-3 px-2 py-2 text-sm md:w-[400px] rounded-full outline-indigo-500'/>
+                            <input type='email' name='email' value={formData.email} onChange={handleChange} autoComplete='off' required placeholder='Enter Your Email' className='mt-3 w-[300px] sm:p-3 px-2 py-2 text-sm md:w-[400px] rounded-full outline-indigo-500' />
+                            {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
                         </div>
 
                         <div className='mb-1'>
-                            <input  type='password' name='password' value={formData.password} onChange={handleChange} autoComplete='off' required placeholder='Enter Password' className='mt-3 w-[300px] sm:p-3 px-2 py-2 text-sm md:w-[400px] rounded-full outline-indigo-500'  />
+                            <input  type='password' name='password' value={formData.password} onChange={handleChange} autoComplete='off' required placeholder='Enter Password' className='mt-3 w-[300px] sm:p-3 px-2 py-2 text-sm md:w-[400px] rounded-full outline-indigo-500'    />
+                            {errors.password && <p className="text-red-500 text-sm">{errors.password}</p>}
                         </div>
 
                         <div className='mb-5'>
-                            <input type='password' name='confirmPassword' value={formData.confirmPassword} onChange={handleChange} autoComplete='off' required placeholder='Enter Confirm Password' className='mt-3 w-[300px] sm:p-3 px-2 py-2 text-sm md:w-[400px] rounded-full outline-indigo-500'/>
+                            <input type='password' name='confirmPassword' value={formData.confirmPassword} onChange={handleChange} autoComplete='off' required placeholder='Enter Confirm Password' className='mt-3 w-[300px] sm:p-3 px-2 py-2 text-sm md:w-[400px] rounded-full outline-indigo-500' />
+                            {errors.confirmPassword && <p className="text-red-500 text-sm">{errors.confirmPassword}</p>}
                         </div>
 
                         <button type='submit' className='w-[200px] mb-1 sm:w-[150px] py-2 bg-indigo-600 text-white font-semibold rounded-full hover:bg-indigo-700'>
@@ -71,7 +103,7 @@ const Signin = () => {
                 </motion.div>
 
                 <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }} className='md:w-[45%] md:h-[500px] rounded-[100%] hidden md:block'>
-                    <img className='md:rounded-full md:h-[500px]' src='https://media.istockphoto.com/id/1281150061/vector/register-account-submit-access-login-password-username-internet-online-website-concept.jpg?s=612x612&w=0&k=20&c=9HWSuA9IaU4o-CK6fALBS5eaO1ubnsM08EOYwgbwGBo=' alt='image' />
+                    <img className='md:rounded-full md:h-[500px]' src='https://media.istockphoto.com/id/1281150061/vector/register-account-submit-access-login-password-username-internet-online-website-concept.jpg?s=612x612&w=0&k=20&c=9HWSuA9IaU4o-CK6fALBS5eaO1ubnsM08EOYwgbwGBo=' alt='image'  />
                 </motion.div>
             </div>
             <ToastContainer />
