@@ -71,8 +71,8 @@ const Signin = () => {
                         SIGN-UP
                     </h3>
                     <p className='sm:text-xl text-center sm:mb-2 font-bold'>Enter Your Account Details To Sign-Up!</p>
-                    <form onSubmit={handleSubmit} className='w-full sm:w-full md:mt-6 flex flex-col justify-center items-center md:ml-14'>
-                        <div className='w-full mb-3'>
+                    <form onSubmit={handleSubmit} className='w-full sm:w-full md:mt-6 flex flex-col justify-center items-center '>
+                        <div className='w-full mb-3 md:ml-28'>
                             <input
                                 type='text'
                                 name='name'
@@ -86,7 +86,7 @@ const Signin = () => {
                             {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
                         </div>
 
-                        <div className='w-full mb-3'>
+                        <div className='w-full mb-3 md:ml-28'>
                             <input
                                 type='email'
                                 name='email'
@@ -100,7 +100,7 @@ const Signin = () => {
                             {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                         </div>
 
-                        <div className='w-full mb-3'>
+                        <div className='w-full mb-3 md:ml-28'>
                             <input
                                 type='password'
                                 name='password'
@@ -114,7 +114,7 @@ const Signin = () => {
                             {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password}</p>}
                         </div>
 
-                        <div className='w-full mb-5'>
+                        <div className='w-full mb-5 md:ml-28'>
                             <input
                                 type='password'
                                 name='confirmPassword'
