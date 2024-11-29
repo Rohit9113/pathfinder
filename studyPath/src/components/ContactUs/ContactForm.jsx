@@ -5,7 +5,7 @@ function ContactForm() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [response, setResponse] = useState("");
 
-  const BACKEND_URL = process.env.NODE_ENV === 'production'? 'https://pathfinder-9l4a.onrender.com':'http://localhost:4000';
+  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:4000';
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -14,7 +14,7 @@ function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}api/contacts`, formData);
+      const res = await axios.post(`${BACKEND_URL}api/contacts`, formData);
       setResponse(res.data.message);
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {

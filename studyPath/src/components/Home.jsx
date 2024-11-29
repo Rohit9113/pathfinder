@@ -10,10 +10,13 @@ import FAQ from "../pages/FAQ";
 function Home() {
     const [academics, setAcademics] = useState([]);
 
-    const BACKEND_URL = process.env.NODE_ENV === 'production'? 'https://pathfinder-9l4a.onrender.com':'http://localhost:4000';
+    // console.log('VITE_BACKEND_URL:', import.meta.env.VITE_BACKEND_URL);
+
+
+    const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:4000';
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/academics`)
+        axios.get(`${BACKEND_URL}/api/academics`)
             .then((response) => {
                 setAcademics(response.data);
             })
