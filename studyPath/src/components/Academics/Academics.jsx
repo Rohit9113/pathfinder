@@ -18,43 +18,49 @@ function Academics() {
   }, []);
 
   return (
-    <div className="flex flex-wrap">
+    <div className="flex flex-wrap justify-center ">
       {academics.map((academic, index) => (
-        <div key={index} className="flex">
-          <div className="md:w-[400px] md:h-[250px] bg-slate-900 md:ml-10 md:mt-10 rounded-3xl">
-            <img src={academic.image?.url || loading} alt={academic.academicname} className="md:w-[100%] md:h-[245px] rounded-3xl" />
+        <div key={index} className="flex bg-gray-200 rounded-l-full gap-4 mt-32 md:gap-20 justify-center items-center p-4">
+          <div className="  w-40 h-40  md:w-80 md:h-80 bg-slate-900 md:ml-10 md:mt-10 rounded-full">
+            <img  
+            src={academic.image?.url || loading} alt={academic.academicname}
+             className=" w-40 h-40  md:w-[310px] md:h-[310px] rounded-full transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" />
           </div>
 
-          <div className="md:w-[850px] md:h-[250px] bg-slate-900 md:ml-10 md:mt-10 rounded-3xl">
-            <div className="md:w-[100%] md:h-[245px] bg-slate-400 md:ml-0 md:mt-0 rounded-3xl p-4">
-              <p className="text-center text-3xl font-bold">{academic.academicname}</p>
-              <p className="text-xs">{academic.description}</p>
+          <div className="   md:w-[850px] md:h-96  md:ml-10 md:mt-10 rounded-3xl">
+            <div className=" w-40 md:w-[100%] md:h-[360px] bg-slate-50 md:ml-0 md:mt-0 rounded-3xl p-4 shadow-2xl">
+              <p className="text-center md:text-3xl text-lg font-bold">{academic.academicname}</p>
+              <p className="text-sm  p-5 hidden md:block">{academic.description}</p>
 
-              <div className="p-3">
-                <p className="text-lg font-semibold mb-4">
+              <div className="md:pl-5 ">
+                <p className="md:text-lg  text-sm md:font-semibold mb-4">
                   Explore our top resources to enhance your skills and achieve your goals!
                 </p>
-                <ul className="flex flex-wrap gap-5">
-                  <li><a href="#" className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-700">Courses</a></li>
-                  <li><a href="#" className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-700">Tutorials</a></li>
-                  <li><a href="#" className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-700">Jobs</a></li>
-                  <li><a href="#" className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-700">Practice</a></li>
-                  <li><a href="#" className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-700">Official Website</a></li>
-                </ul>
+                <div className=" gap-5 w-32  md:w-80  bg-blue-950 text-white p-1 md:p-2 rounded-full text-center">
+                     <button className="md:text-3xl text-sm"> Official Website</button>
+                </div>
               </div>
 
-              <div className="px-6 flex flex-wrap gap-5">
-                <div className="flex items-center gap-2">
+              <div className="md:px-6  pt-1  md:flex text-left md:justify-between md:pt-5">
+               <div className="flex flex-col">
+                 <p className="md:font-semibold md:text-xl text-sm">Country: {academic.country}</p>
+             <p className="md:font-semibold  md:text-xl text-xs">Rating: {academic.rating|| "N/A"}⭐️⭐️⭐️⭐️</p>
+            
+            </div>
+              <div className="">
+             <div className="flex items-center gap-2">
                   <FontAwesomeIcon icon={faMapMarkerAlt} size="1x" color="red" />
-                  <p className="font-semibold text-red-600">{academic.location || "Online"}</p>
+                  <p className="font-semibold text-red-600 md:text-xl text-sm">{academic.location || "Online"}</p>
                 </div>
-                <p className="font-semibold">Founder: {academic.founder || "N/A"}</p>
-                <p className="font-semibold">Country: {academic.country}</p>
-                <p className="font-semibold">Founded: {academic.founded || "N/A"}</p>
+             
+             <div className="flex items-center gap-1">
+                     <i className="font-semibold md:text-end md:text-xl text-xs">Founder: {academic.founder || "N/A"}</i>
+              
+                </div>
+                </div>
+                  {/* <p className="font-semibold">Founded: {academic.founded || "N/A"}</p> */}
 
-                <div className="flex items-center gap-1">
-                  <p className="font-semibold ml-2">Rating: {academic.rating || "N/A"}</p>
-                </div>
+              
               </div>
             </div>
           </div>
