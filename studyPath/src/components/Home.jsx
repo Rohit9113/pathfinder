@@ -22,7 +22,7 @@ function Home() {
             });
     }, []);
 
-    const displayedAcademics = academics.slice(0, 6);
+    const displayedAcademics = academics.slice(0, 3);
 
     return (
         <>

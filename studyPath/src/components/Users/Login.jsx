@@ -35,36 +35,37 @@ const Login = () => {
     return (
         <>
             <Nav />
-            <div className='w-full md:h-[700px] gap-5 flex flex-wrap md:py-20 md:items-center md:justify-center'>
+            <div className='max-w-screen max-h-screen md:h-[700px] gap-5 flex flex-wrap md:py-20 md:items-center md:justify-center'>
                 <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }} className='md:w-[45%] md:h-[500px] rounded-[100%]' >
-                    <img className='md:rounded-full md:h-[500px]' src='https://media.istockphoto.com/id/1281150061/vector/register-account-submit-access-login-password-username-internet-online-website-concept.jpg?s=612x612&w=0&k=20&c=9HWSuA9IaU4o-CK6fALBS5eaO1ubnsM08EOYwgbwGBo=' alt='image' />
+                    <img className='md:rounded-full md:h-[500px] hidden md:block' src='https://media.istockphoto.com/id/1281150061/vector/register-account-submit-access-login-password-username-internet-online-website-concept.jpg?s=612x612&w=0&k=20&c=9HWSuA9IaU4o-CK6fALBS5eaO1ubnsM08EOYwgbwGBo=' alt='image' />
                 </motion.div>
 
-                <motion.div initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className='md:w-[45%] bg-cyan-200 md:h-[500px] rounded-[20%] md:p-14' >
+                <motion.div initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className='h-auto md:w-[45%] bg-cyan-200 md:h-[500px] rounded-3xl md:p-14 w-[90%]'>
                     <h3 className='text-2xl m-auto text-center md:mb-5 font-bold'>
-                        Login with Your Email and Password to Access All Features
+                        LOGIN
                     </h3>
                     {response && <p className="mt-4 text-center text-yellow-500">{response}</p>}
                     <form className='w-full md:mt-10' onSubmit={handleSubmit}>
                         <div className='mb-1'>
-                            <input type='email' name='email' autoComplete='off' value={formData.email} onChange={handleChange} required placeholder='Enter Your Email' className='mt-2 p-3 w-[500px] border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500' />
+                            <input type='email' name='email' autoComplete='off' value={formData.email} onChange={handleChange} required placeholder='Enter Your Email ID' className='mt-2 p-3 w-full border border-gray-300 rounded-md outline-none' />
                         </div>
 
                         <div className='mb-5'>
-                            <input type='password' name='password' autoComplete='off' value={formData.password} onChange={handleChange} required placeholder='Enter Password' className='mt-2 p-3 w-[500px] border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500' />
+                            <input type='password' name='password' autoComplete='off' value={formData.password} onChange={handleChange} required placeholder='Enter Your Password' className='mt-2 p-3 w-full border border-gray-300 rounded-md outline-none' />
                         </div>
-                        <button type='submit' className='font-cormorant md:ml-40 md:w-[150px] py-3 px-4 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500'>
+                        <button type='submit' className='font-cormorant md:ml-40 md:w-[150px] py-3 px-4 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700'>
                             Login
                         </button>
                     </form>
 
-                    <Link to='/signup'>
-                        <p className='text-center text-xl font-bold md:py-6'>Click Here to Signup</p>
-                    </Link>
+                    
+                        <p className='text-center text-xl font-bold md:py-6'>Don't Have an Account, <Link to='/signup' className='hover:underline animate-pulse text-green-500'>Register Now!</Link></p>
                 </motion.div>
             </div>
 
-            <Footer />
+            <div className=''>
+                <Footer />
+            </div>
         </>
     );
 };
