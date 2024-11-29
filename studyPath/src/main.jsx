@@ -13,10 +13,6 @@ import Nav from './components/Nav.jsx'
 import Footer from './components/Footer.jsx'
 
 
-
-
-
-
 const AppLayout=()=>{
 
 return (

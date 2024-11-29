@@ -20,11 +20,13 @@ const Login = () => {
 
             if (res.status === 200) {
                 localStorage.setItem('authToken', res.data.token);
+                localStorage.setItem('user', JSON.stringify(res.data.user));
                 navigate('/');
+                window.location.reload();
             }
         } catch (error) {
-            const errorMessage = error.response && error.response.data.message 
-                ? error.response.data.message 
+            const errorMessage = error.response && error.response.data.message
+                ? error.response.data.message
                 : 'An error occurred';
             toast.error(errorMessage, {
                 position: "top-center",
@@ -36,6 +38,8 @@ const Login = () => {
             });
         }
     };
+
+
 
     return (
         <>
@@ -51,19 +55,19 @@ const Login = () => {
                     </h3>
                     <form className='w-full md:mt-10' onSubmit={handleSubmit}>
                         <div className='mb-1'>
-                            <input type='email' name='email' autoComplete='off' value={formData.email} onChange={handleChange} required placeholder='Enter Your Email' className='mt-2 p-3 w-[500px] border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500'/>
+                            <input type='email' name='email' autoComplete='off' value={formData.email} onChange={handleChange} required placeholder='Enter Your Email' className='mt-2 p-3 w-[500px] border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500' />
                         </div>
 
                         <div className='mb-5'>
-                            <input type='password' name='password' autoComplete='off' value={formData.password} onChange={handleChange} required placeholder='Enter Password' className='mt-2 p-3 w-[500px] border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500'/>
+                            <input type='password' name='password' autoComplete='off' value={formData.password} onChange={handleChange} required placeholder='Enter Password' className='mt-2 p-3 w-[500px] border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500' />
                         </div>
                         <button type='submit' className='font-cormorant md:ml-40 md:w-[150px] py-3 px-4 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700'>
                             Login
                         </button>
                     </form>
 
-                    
-                        <p className='text-center text-xl font-bold md:py-6'>Don't Have an Account, <Link to='/signup' className='hover:underline animate-pulse text-green-500'>Register Now!</Link></p>
+
+                    <p className='text-center text-xl font-bold md:py-6'>Don't Have an Account, <Link to='/signup' className='hover:underline animate-pulse text-green-500'>Register Now!</Link></p>
                 </motion.div>
             </div>
         </>

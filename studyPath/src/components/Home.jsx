@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import Nav from './Nav';
-import Footer from './Footer';
 import FAQ from "../pages/FAQ";
 
 // import geek from './Academics/img/GeeksforGeeks.webp';
@@ -26,8 +24,6 @@ function Home() {
 
     return (
         <>
-        <Nav />
-
            <div
             className="relative">
 
