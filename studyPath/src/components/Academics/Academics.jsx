@@ -7,8 +7,10 @@ import { faMapMarkerAlt, faStar, faStarHalfAlt } from "@fortawesome/free-solid-s
 function Academics() {
   const [academics, setAcademics] = useState([]);
 
+  const BACKEND_URL = process.env.NODE_ENV === 'production'? 'https://pathfinder-9l4a.onrender.com':'http://localhost:4000';
+
   useEffect(() => {
-    axios.get("http://localhost:4000/api/academics")
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}api/academics`)
       .then((response) => {
         setAcademics(response.data);
       })
