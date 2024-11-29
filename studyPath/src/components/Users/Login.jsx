@@ -9,6 +9,8 @@ const Login = () => {
     const [formData, setFormData] = useState({ email: '', password: '' });
     const navigate = useNavigate();
 
+    const BACKEND_URL = process.env.NODE_ENV === 'production'? 'https://pathfinder-9l4a.onrender.com':'http://localhost:4000';
+
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
@@ -16,7 +18,7 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post('http://localhost:4000/api/login/login', formData);
+            const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/signup/signup`/api/login/login', formData);
 
             if (res.status === 200) {
                 localStorage.setItem('authToken', res.data.token);
