@@ -42,7 +42,7 @@ function Home() {
                     <br /><span className="font-mono text-white">StudyPathFinder
                     <span className="animate-ping">_</span></span>
                     <br />
-                One Stop Destination for Personalized <br />Course Recommendations!</p>
+                One Stop Destination for Personalized <br />Platform Recommendations!</p>
                 </div>
 
             </div>

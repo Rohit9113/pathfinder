@@ -8,7 +8,7 @@ const Footer = () => {
       className="max-w-screen h-[20vh] bg-black text-white flex justify-around items-center flex-wrap mt-5">
       <Link to="/" className="hover:underline">Home</Link>
       <Link to="/about" className="hover:underline">About Us</Link>
-      <Link to="/Academics" className="hover:underline">Recommendations</Link>
+      <Link to="/Academics" className="hover:underline">Platforms</Link>
       <Link to="/contact" className="hover:underline">Contact Us</Link>
       <Link to="/faq" className="hover:underline">FAQs</Link>
     </div>

@@ -102,7 +102,7 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
     <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} z-50 backdrop-blur p-4 fixed top-[15vh] w-full h-[100vh]`}>
       <Link to="/" className='flex text-lg mb-3 border-b border-black'>Home</Link>
       <Link to="/about" className='flex text-lg mb-3 border-b border-black'>About Us</Link>
-      <Link to="/Academics" className='flex text-lg mb-3 border-b border-black '>Recommendations</Link>
+      <Link to="/Academics" className='flex text-lg mb-3 border-b border-black '>Platforms</Link>
       <Link to="/contact" className='flex text-lg mb-3 border-b border-black '>Contact Us</Link>
       <a href="#faq" className='flex text-lg mb-3 border-b border-black '>FAQs</a>
 
