@@ -37,7 +37,7 @@ function Academics() {
                   Explore our top resources to enhance your skills and achieve your goals!
                 </p>
                 <div className=" gap-5 w-32  md:w-80  bg-blue-950 text-white p-1 md:p-2 rounded-full text-center">
-                     <button className="md:text-3xl text-sm"> Official Website</button>
+                     <button className="md:text-3xl text-sm"><a href={academic.website}>Official Website</a> </button>
                 </div>
               </div>
 
