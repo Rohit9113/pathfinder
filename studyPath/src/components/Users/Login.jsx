@@ -39,7 +39,6 @@ const Login = () => {
 
     return (
         <>
-            <Nav />
             <div>
                 <div className='max-w-screen-xl mx-auto flex flex-wrap py-60 md:py-20 items-center justify-center md:items-center md:justify-center'>
                 <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }} className='md:w-[45%] md:h-[500px] rounded-[100%]' >
@@ -51,7 +50,7 @@ const Login = () => {
                         LOGIN   
                     </h3>
                     <p className='sm:text-xl text-center md:mb-5 font-semibold'>Enter Your Account Details</p>
-                    {response && <p className="mt-4 text-center text-yellow-500">{response}</p>}
+                    {/* {response && <p className="mt-4 text-center text-yellow-500">{response}</p>} */}
                     <form className='w-full sm:w-full md:mt-10 flex flex-col justify-center items-center' onSubmit={handleSubmit}>
                         <div className='mb-1'>
                             <input type='email' name='email' autoComplete='off' value={formData.email} onChange={handleChange} required placeholder='Enter Your Email ID' className='mt-9 w-[300px] sm:mb-2 sm:p-3 px-2 py-2 text-sm md:w-[450px] rounded-full outline-indigo-500' />
@@ -69,10 +68,7 @@ const Login = () => {
                 </motion.div>
             </div>
             </div>
-            <div className=''>
-                <Footer />
-            </div>
-            {/* </div> */}
+
         </>
     );
 };

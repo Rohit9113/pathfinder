@@ -6,11 +6,12 @@ import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom'
 import Home from './components/Home.jsx'
 import ContactForm from './components/ContactUs/ContactForm.jsx'
 import Academics from './components/Academics/Academics.jsx'
-import About from './components/ContactUs/About.jsx'
+import About from './pages/About.jsx'
 import Login from './components/Users/Login.jsx'
 import Signin from './components/Users/Register.jsx'
 import Nav from './components/Nav.jsx'
 import Footer from './components/Footer.jsx'
+
 
 
 
