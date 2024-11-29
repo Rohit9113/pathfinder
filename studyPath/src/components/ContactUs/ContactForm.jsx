@@ -21,7 +21,7 @@ function ContactForm() {
   };
 
   return (
-    <div className="contact-form w-full bg-slate-400 py-6 md:py-10">
+    <div className="contact-form max-w-full justify-center bg-slate-400 py-6 md:py-10">
       <p className="text-center font-cormorant text-2xl md:text-5xl font-bold underline">
         Contact Us
       </p>
