@@ -63,7 +63,6 @@ const Signin = () => {
 
     return (
         <>
-            <Nav />
             <div className='max-w-screen-xl mx-auto flex flex-wrap py-60 md:py-20 items-center justify-center md:items-center md:justify-center'>
                 <motion.div initial={{ opacity: 0, x: 100 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className='h-auto md:w-[45%] bg-cyan-200 md:h-[500px] rounded-3xl md:p-14 w-[90%]'>
                     <h3 className='sm:text-5xl m-auto text-center md:mb-2 font-bold'>
@@ -98,8 +97,8 @@ const Signin = () => {
                     </form>
                     <p className='sm:text-xl text-center text-sm font-semibold'>Already have an account? <Link to='/login' className='hover:underline animate-pulse text-green-500'>Log-In!</Link></p>
 
-                    {response && <p className="mt-2 text-center text-yellow-500">{response}</p>}
-                    {error && <p className="mt-2 text-center text-yellow-500">{error}</p>}
+                    {/* {response && <p className="mt-2 text-center text-yellow-500">{response}</p>}
+                    {error && <p className="mt-2 text-center text-yellow-500">{error}</p>} */}
                 </motion.div>
 
                 <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }} className='md:w-[45%] md:h-[500px] rounded-[100%] hidden md:block'>
