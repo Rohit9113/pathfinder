@@ -52,7 +52,7 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 <div 
   id='nav'
-  className={`w-full max-w-full h-[15vh] md:h-[15vh] flex justify-between items-center px-4 md:px-8 fixed ${isScrolled ? 'bg-black' : 'bg-transparent'}`}
+  className={`w-full max-w-full h-[15vh] md:h-[15vh] flex justify-between z-50 items-center px-4 md:px-8 fixed ${isScrolled ? 'bg-black' : 'bg-transparent'}`}
 >
 
 
@@ -60,9 +60,9 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
         
         <div
         id='logo'>
-          <h1 className={`text-sm font-mono px-4 py-2 border-2 
+          <h1 className={`text-sm font-mono px-4 py-2 border-2
           ${isScrolled ? 'text-white border-white' : 'text-black border-black'}`}>
-          StudyPathFinder.</h1>
+          StudyPathFinder<span className='animate-ping'>_</span></h1>
 
         </div>
 
@@ -70,10 +70,11 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
         id="infoPanel"
         className={`w-[50%] h-[50%] justify-around items-center rounded-full hidden md:flex border-2 
           ${isScrolled ? 'text-white border-white' : 'text-black border-black'}`}>
-          <Link to="/" className='hover:underline'>Home</Link>
+          <a href="/" className='hover:underline'>Home</a>
           <Link to="/about" className='hover:underline'>About Us</Link>
-          <Link to="" className='hover:underline'>Our Services</Link>
-          <Link to="contact" className='hover:underline'>Contact Us</Link>
+          <Link to="/Academics" className='hover:underline'>Recommendations</Link>
+          <Link to="/contact" className='hover:underline'>Contact Us</Link>
+          <a href="#faq" className='hover:underline'>FAQs</a>
         </div>
 
         <div 
@@ -99,15 +100,16 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
       </div>
     
 
-    <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} bg-black text-white p-4 fixed top-[15vh] w-full`}>
-      <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full'>Home</a>
-      <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full'>About Us</a>
-      <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full'>Our Services</a>
-      <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full'>Contact Us</a>
+    <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} z-50 bg-black text-white p-4 fixed top-[15vh] w-full`}>
+      <Link to="/" className='flex justify-center border-2 border-white mb-1 rounded-full'>Home</Link>
+      <Link to="/about" className='flex justify-center border-2 border-white mb-1 rounded-full'>About Us</Link>
+      <Link to="/Academics" className='flex justify-center border-2 border-white mb-1 rounded-full'>Recommendations</Link>
+      <Link to="/contact" className='flex justify-center border-2 border-white mb-1 rounded-full'>Contact Us</Link>
+      <a href="#faq" className='flex justify-center border-2 border-white mb-1 rounded-full'>FAQs</a>
 
       <div>
-        <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full'>Login</a>
-        <a href="" className='flex justify-center border-2 border-white mb-1 rounded-full'>Sign Up</a>
+        <Link to="/login" className='flex justify-center border-2 border-white mb-1 rounded-full'>Login</Link>
+        <Link to="/register" className='flex justify-center border-2 border-white mb-1 rounded-full'>Sign Up</Link>
       </div>
     </div>
   </div>
