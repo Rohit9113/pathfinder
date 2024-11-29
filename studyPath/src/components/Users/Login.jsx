@@ -63,9 +63,7 @@ const Login = () => {
                 </motion.div>
             </div>
 
-            <div className=''>
-                <Footer />
-            </div>
+           
         </>
     );
 };

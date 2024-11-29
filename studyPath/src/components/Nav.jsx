@@ -81,7 +81,7 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
         className={`w-[20%] h-[50%] border-2 justify-around items-center rounded-full hidden md:flex 
         ${isScrolled ? 'text-white border-white' : 'text-black border-black'}`}>
           <Link to="/login" className='hover:underline'>Log-in</Link>
-          <Link to="/signin" className='hover:underline'>Sign-up</Link>
+          <Link to="/signup" className='hover:underline'>Sign-up</Link>
         </div>
 
         <button
