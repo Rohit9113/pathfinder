@@ -4,22 +4,21 @@ import Footer from '../components/Footer'
 
 const About = () => {
   return (
-      <>
-      <Nav />
-      <div 
-      id="main"
-      className='w-full h-auto flex justify-center mb-10'>
+    <>
+      <div
+        id="main"
+        className='w-full h-auto flex justify-center mb-10'>
 
-        
+
         <div
-        id='content'
-        className='w-[90%] h-auto flex justify-center items-center flex-col p-10 shadow-2xl mt-32 rounded-3xl'>
+          id='content'
+          className='w-[90%] h-auto flex justify-center items-center flex-col p-10 shadow-2xl mt-32 rounded-3xl'>
 
           <span className='font-bold text-5xl mb-6 sm:text-6xl text-center'>About Us</span>
 
           <p className='mb-6 text-justify sm:text-center'>Welcome to StudyPathFinder, your trusted partner in finding the perfect technical courses to advance your career in Computer Science and Information Technology. In today’s fast-paced world, the vast array of online and offline courses can be overwhelming, and making the right choice is crucial to achieving your goals. That’s where we come in!
             <br />
-          At StudyPathFinder, we specialize in helping students find the best courses that match their individual needs. Whether you're looking to learn a new programming language, dive into data science, explore cybersecurity, or enhance your skills in software development, we provide personalized recommendations based on your preferences.
+            At StudyPathFinder, we specialize in helping students find the best courses that match their individual needs. Whether you're looking to learn a new programming language, dive into data science, explore cybersecurity, or enhance your skills in software development, we provide personalized recommendations based on your preferences.
           </p>
 
           <span className='font-bold text-3xl sm:text-4xl mb-4'>Our Mission</span>
@@ -63,8 +62,7 @@ const About = () => {
 
 
       </div>
-      <Footer />
-      </>
+    </>
 
   )
 }
