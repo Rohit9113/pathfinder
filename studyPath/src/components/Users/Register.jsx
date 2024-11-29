@@ -11,6 +11,8 @@ const Signin = () => {
     const [errors, setErrors] = useState({});
     const navigate = useNavigate();
 
+    const BACKEND_URL = process.env.NODE_ENV === 'production'? 'https://pathfinder-9l4a.onrender.com':'http://localhost:4000';
+
     const validate = () => {
         const newErrors = {};
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -44,7 +46,7 @@ const Signin = () => {
         if (!validate()) return;
 
         try {
-            const res = await axios.post('http://localhost:4000/api/signup/signup', formData);
+            const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/signup/signup`, formData);
             if (res.status === 201) {
                 toast.success(res.data.message, { position: "top-center" });
                 setFormData({ name: "", email: "", password: "", confirmPassword: "" });
