@@ -65,7 +65,6 @@ const Signin = () => {
 
     return (
         <>
-            <Nav />
             <div className='max-w-screen-xl mx-auto flex flex-wrap py-60 md:py-20 items-center justify-center md:items-center md:justify-center'>
                 <motion.div initial={{ opacity: 0, x: 100 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className='h-auto md:w-[45%] bg-cyan-200 md:h-[500px] rounded-3xl md:p-14 w-[90%]'>
                     <h3 className='sm:text-5xl m-auto text-center md:mb-2 font-bold'>
