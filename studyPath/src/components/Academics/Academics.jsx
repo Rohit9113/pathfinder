@@ -20,7 +20,16 @@ function Academics() {
   }, []);
 
   return (
+    <>
+    <button className="bg-blue-950 text-white w-64 p-4 font-bold  rounded-full relative left-[80%] top-24"
+    onClick={()=>{
+      const filterAcademics=academics.filter((ace)=>ace.rating>4.5
+      );
+      setAcademics(filterAcademics);
+    }}
+    >Top rated academics </button>
     <div className="flex flex-wrap justify-center ">
+   
       {academics.map((academic, index) => (
         <div key={index} className="flex bg-gray-200 rounded-l-full gap-4 mt-32 md:gap-20 justify-center items-center p-4">
           <div className="  w-40 h-40  md:w-80 md:h-80 bg-slate-900 md:ml-10 md:mt-10 rounded-full">
@@ -69,6 +78,7 @@ function Academics() {
         </div>
       ))}
     </div>
+    </>
   );
 }
 
